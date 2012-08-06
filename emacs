@@ -5,6 +5,11 @@
 (require 'evil)
 (evil-mode 1)
 
+;; Solarized color theme
+(add-to-list 'load-path "~/.emacs.d/emacs-color-theme-solarized")
+(require 'color-theme-solarized)
+(setq solarized-termcolors 256)
+
 ;; GUD mode (GDB-UI)
 ;(setq gdb-use-separate-io-buffer t)
 
@@ -12,7 +17,8 @@
 (require 'color-theme)
 (color-theme-initialize)
 (setq color-theme-is-global t)
-(color-theme-hober)
+;(color-theme-hober)
+(color-theme-solarized-dark)
 
 ;; example of how to create a key binding
 ;(global-set-key (kbd "C-c %") 'query-replace-regexp)
