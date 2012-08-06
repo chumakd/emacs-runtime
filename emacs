@@ -1,3 +1,5 @@
+;; vim: filetype=lisp
+
 ;; Vim emulation
 (add-to-list 'load-path "~/.emacs.d/evil")
 (require 'evil)
