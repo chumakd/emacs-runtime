@@ -16,6 +16,9 @@
 ;; magit - a Git interface
 (require 'magit)
 
+;; Org mode
+(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+
 ;; Color theme
 (require 'color-theme)
 (color-theme-initialize)
