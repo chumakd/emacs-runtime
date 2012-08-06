@@ -13,6 +13,9 @@
 ;; GUD mode (GDB-UI)
 ;(setq gdb-use-separate-io-buffer t)
 
+;; magit - a Git interface
+(require 'magit)
+
 ;; Color theme
 (require 'color-theme)
 (color-theme-initialize)
