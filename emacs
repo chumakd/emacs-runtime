@@ -1,5 +1,8 @@
 ;; vim: filetype=lisp
 
+;; GUD mode (GDB-UI)
+;(setq gdb-use-separate-io-buffer t)
+
 ;; Vim emulation
 (add-to-list 'load-path "~/.emacs.d/evil")
 (require 'evil)
@@ -10,21 +13,21 @@
 (require 'color-theme-solarized)
 (setq solarized-termcolors 256)
 
-;; GUD mode (GDB-UI)
-;(setq gdb-use-separate-io-buffer t)
-
-;; magit - a Git interface
-(require 'magit)
-
-;; Org mode
-(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
-
 ;; Color theme
+(add-to-list 'load-path "~/.emacs.d/color-theme")
 (require 'color-theme)
 (color-theme-initialize)
 (setq color-theme-is-global t)
 ;(color-theme-hober)
 (color-theme-solarized-dark)
+
+;; magit - a Git interface
+(add-to-list 'load-path "~/.emacs.d/magit")
+;(require 'magit)
+
+;; Org mode
+(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+;(require 'org-mode)
 
 ;; example of how to create a key binding
 ;(global-set-key (kbd "C-c %") 'query-replace-regexp)
