@@ -1,60 +1,101 @@
-;; vim: filetype=lisp
+;; ---------------------------------------------------------------------- {{{1
+;; vim: filetype=lisp  expandtab foldmethod=marker
 
-;; GUD mode (GDB-UI)
-;(setq gdb-use-separate-io-buffer t)
+; Packages -------------------------------------------------------------- {{{1
 
-;; Vim emulation
-(add-to-list 'load-path "~/.emacs.d/evil")
-(require 'evil)
-(evil-mode 1)
+;; repositories
+(setq         package-archives  '(("gnu"   . "https://elpa.gnu.org/packages/")))
+(add-to-list 'package-archives  '( "melpa" . "https://melpa.org/packages/"))
+;(add-to-list 'package-archives  '( "marmalade" . "https://marmalade-repo.org/packages/"))
+;; or use mepla stable versions
+;(add-to-list 'package-archives  '( "melpa-stable" . "https://melpa.org/packages/"))
 
-;; Color theme
-(add-to-list 'load-path "~/.emacs.d/color-theme")
-(require 'color-theme)
-(setq color-theme-is-global t)
-;(eval-after-load "color-theme"
-  ;'(progn
-     ;(color-theme-initialize)
-     ;(color-theme-solarized-dark)))
+;; activate all the packages
+(package-initialize)
 
-;; Solarized color theme
-(add-to-list 'load-path "~/.emacs.d/emacs-color-theme-solarized")
-(require 'color-theme-solarized)
-(setq solarized-termcolors 256)
-(color-theme-solarized-dark)
-(if (>= emacs-major-version 24)
-    (progn (add-to-list 'custom-theme-load-path "~/.emacs.d/emacs-color-theme-solarized")
-           (load-theme 'solarized-dark t)))
+;; install use-package
+(if (not (package-installed-p 'use-package))
+    (progn
+      (package-refresh-contents)
+      (package-install 'use-package)))
 
-;; magit - a Git interface
-(add-to-list 'load-path "~/.emacs.d/magit")
-;(require 'magit)
+(setq use-package-always-ensure t)
+(require 'use-package)
 
-;; Org mode
-(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
-;(require 'org-mode)
+; GUI ------------------------------------------------------------------- {{{1
 
-;; example of how to create a key binding
-;(global-set-key (kbd "C-c %") 'query-replace-regexp)
+;; color theme
+(use-package solarized-theme
+  :config  (if (display-graphic-p)
+               (load-theme 'solarized-dark t)))
 
-;; example of how to create an alias which could be use with M-x
-;; in this example it would be M-x qrr
-;(defalias 'qrr 'query-replace-regexp)
+;; font
+(if (display-graphic-p)
+    (when (eq system-type 'darwin)
+          (set-face-attribute 'default nil :family "Input")
+          (set-face-attribute 'default nil :height 170)))
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(column-number-mode t)
- '(custom-safe-themes (quote ("1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" default)))
- '(font-use-system-font t)
- '(safe-local-variable-values (quote ((scroll-step . 1) (c-indentation-style . "K&R"))))
- '(scroll-bar-mode nil)
- '(tool-bar-mode nil))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#002b36" :foreground "#839496" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 113 :width normal :foundry "unknown" :family "DejaVu Sans Mono")))))
+;; interface
+(when (display-graphic-p)
+      (tool-bar-mode -1)              ; disable toolbar
+      (scroll-bar-mode -1)            ; disable scrollbars
+      (setq inhibit-splash-screen t)  ; disable welcome screen
+      )
+
+; Options --------------------------------------------------------------- {{{1
+
+;; disable line wrapping
+(set-default 'truncate-lines t)
+
+;; enable line numbers
+(set-default 'column-number-mode t)
+
+;; highlight matching parenthesis
+(setq show-paren-delay 0)
+(show-paren-mode 1)
+
+;; disable menu in console
+(if (not (display-graphic-p))
+    (menu-bar-mode -1))
+
+; Key-binding ----------------------------------------------------------- {{{1
+
+;; map help-key to C-? and use C-h as backspace
+(global-set-key (kbd "C-h") 'delete-backward-char)
+(global-set-key (kbd "C-,") 'help-command)
+
+; Modes ----------------------------------------------------------------- {{{1
+
+; auto-complete ---------------------------- {{{2
+(use-package auto-complete
+  :config (ac-config-default))
+
+; evil mode -------------------------------- {{{2
+(use-package evil
+  :init  (evil-mode 1)
+  :bind  ("C-s" . evil-repeat-find-char-reverse) ; replace default ',' mapping
+  )
+
+(define-key evil-normal-state-map ","   nil)
+(define-key evil-normal-state-map ",tw" 'toggle-truncate-lines)
+
+; magit ------------------------------------ {{{2
+(use-package magit)
+
+; powerline -------------------------------- {{{2
+(use-package powerline
+  :config  (if (display-graphic-p)
+               (powerline-center-evil-theme)))
+
+; rainbow-delimiters ----------------------- {{{2
+;(use-package rainbow-delimiters
+  ;:config (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
+
+; undo-tree -------------------------------- {{{2
+(use-package undo-tree)
+
+; web-mode --------------------------------- {{{2
+(use-package web-mode)
+
+; emacs auto-config ----------------------------------------------------- {{{1
+
