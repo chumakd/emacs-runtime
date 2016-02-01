@@ -64,6 +64,9 @@
 (setq mouse-wheel-follow-mouse 't)                   ;; scroll window under mouse
 (setq scroll-step 1)                                 ;; keyboard scroll one line at a time
 
+;; always follow symlinks to version controlled files
+(setq vc-follow-symlinks t)
+
 ; Key-binding ----------------------------------------------------------- {{{1
 
 ;; map help-key to C-? and use C-h as backspace
@@ -82,8 +85,25 @@
   :bind  ("C-s" . evil-repeat-find-char-reverse) ; replace default ',' mapping
   )
 
+;; unmap ',' to use it as a prefix
 (define-key evil-normal-state-map ","   nil)
+
+;; togglers
 (define-key evil-normal-state-map ",tw" 'toggle-truncate-lines)
+
+;; window handling
+(define-key evil-normal-state-map ",w=" 'balance-windows)
+(define-key evil-normal-state-map ",wf" 'evil-window-set-height)
+(define-key evil-normal-state-map ",wn" 'evil-window-new)
+(define-key evil-normal-state-map ",wp" 'evil-window-prev)
+(define-key evil-normal-state-map ",ws" 'evil-window-split)
+(define-key evil-normal-state-map ",wv" 'evil-window-vsplit)
+
+;; window navigation
+(define-key evil-normal-state-map ",h" 'evil-window-left)
+(define-key evil-normal-state-map ",j" 'evil-window-down)
+(define-key evil-normal-state-map ",k" 'evil-window-up)
+(define-key evil-normal-state-map ",l" 'evil-window-right)
 
 ; magit ------------------------------------ {{{2
 (use-package magit)
