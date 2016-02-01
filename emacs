@@ -25,9 +25,22 @@
 ; GUI ------------------------------------------------------------------- {{{1
 
 ;; color theme
+(defvar default-color-theme   'solarized-dark)
+(defvar alternate-color-theme 'solarized-light)
+(defvar current-color-theme    default-color-theme)
+
+(defun  toggle-color-theme ()
+    (interactive)
+    (disable-theme current-color-theme)
+    (load-theme    alternate-color-theme t)
+    ;; swap current with alternate
+    (setq current-color-theme
+          (prog1 alternate-color-theme
+                 (setq alternate-color-theme current-color-theme))))
+
 (use-package solarized-theme
   :config  (if (display-graphic-p)
-               (load-theme 'solarized-dark t)))
+               (load-theme current-color-theme t)))
 
 ;; font
 (if (display-graphic-p)
@@ -95,6 +108,7 @@
            :config  (evil-leader/set-leader ",")
                     ;; togglers
                     (evil-leader/set-key "tw" 'toggle-truncate-lines)
+                    (evil-leader/set-key "tg" 'toggle-color-theme)
                     ;; window handling
                     (evil-leader/set-key "w=" 'balance-windows)
                     (evil-leader/set-key "wf" 'evil-window-set-height)
