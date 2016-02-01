@@ -98,6 +98,7 @@
 (define-key evil-normal-state-map ",wp" 'evil-window-prev)
 (define-key evil-normal-state-map ",ws" 'evil-window-split)
 (define-key evil-normal-state-map ",wv" 'evil-window-vsplit)
+(define-key evil-normal-state-map ",cc" 'evil-window-delete)
 
 ;; window navigation
 (define-key evil-normal-state-map ",h" 'evil-window-left)
@@ -114,8 +115,9 @@
                (powerline-center-evil-theme)))
 
 ; rainbow-delimiters ----------------------- {{{2
-;(use-package rainbow-delimiters
-  ;:config (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
+(use-package rainbow-delimiters
+  :config (add-hook 'emacs-lisp-mode-hook #'rainbow-delimiters-mode)
+          (add-hook 'lisp-mode-hook       #'rainbow-delimiters-mode))
 
 ; undo-tree -------------------------------- {{{2
 (use-package undo-tree)
