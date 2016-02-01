@@ -42,6 +42,12 @@
       (setq inhibit-splash-screen t)  ; disable welcome screen
       )
 
+;; window size and position
+(when (display-graphic-p)
+      (set-frame-position (selected-frame) 300 0)
+      (add-to-list 'default-frame-alist '(width  . 80))
+      (add-to-list 'default-frame-alist '(height . 38)))
+
 ; Options --------------------------------------------------------------- {{{1
 
 ;; disable line wrapping
