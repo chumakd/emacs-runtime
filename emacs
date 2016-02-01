@@ -87,27 +87,34 @@
 
 ; evil mode -------------------------------- {{{2
 (use-package evil
-  :init  (evil-mode 1)
-         ;; key bindings (normal mode)
-         ;;   replace default ',' mapping
+  :init
+         ;; key bindings using evil leader
+         ;;   it should be initialized before evil mode
+         (use-package evil-leader
+           :init    (global-evil-leader-mode)
+           :config  (evil-leader/set-leader ",")
+                    ;; togglers
+                    (evil-leader/set-key "tw" 'toggle-truncate-lines)
+                    ;; window handling
+                    (evil-leader/set-key "w=" 'balance-windows)
+                    (evil-leader/set-key "wf" 'evil-window-set-height)
+                    (evil-leader/set-key "wn" 'evil-window-new)
+                    (evil-leader/set-key "wp" 'evil-window-prev)
+                    (evil-leader/set-key "ws" 'evil-window-split)
+                    (evil-leader/set-key "wv" 'evil-window-vsplit)
+                    (evil-leader/set-key "cc" 'evil-window-delete)
+                    ;; window navigation
+                    (evil-leader/set-key "h"  'evil-window-left)
+                    (evil-leader/set-key "j"  'evil-window-down)
+                    (evil-leader/set-key "k"  'evil-window-up)
+                    (evil-leader/set-key "l"  'evil-window-right)
+           )
+
+         ;; evil init
+         (evil-mode 1)
+
+         ;; replace default ',' key mapping, as it's used for evil-leader
          (bind-key "C-s" 'evil-repeat-find-char-reverse evil-normal-state-map)
-         ;;   unmap ',' to use it as a prefix
-         (bind-key ","    nil                     evil-normal-state-map)
-         ;;   togglers
-         (bind-key ",tw" 'toggle-truncate-lines   evil-normal-state-map)
-         ;;   window handling
-         (bind-key ",w=" 'balance-windows         evil-normal-state-map)
-         (bind-key ",wf" 'evil-window-set-height  evil-normal-state-map)
-         (bind-key ",wn" 'evil-window-new         evil-normal-state-map)
-         (bind-key ",wp" 'evil-window-prev        evil-normal-state-map)
-         (bind-key ",ws" 'evil-window-split       evil-normal-state-map)
-         (bind-key ",wv" 'evil-window-vsplit      evil-normal-state-map)
-         (bind-key ",cc" 'evil-window-delete      evil-normal-state-map)
-         ;;   window navigation
-         (bind-key ",h" 'evil-window-left         evil-normal-state-map)
-         (bind-key ",j" 'evil-window-down         evil-normal-state-map)
-         (bind-key ",k" 'evil-window-up           evil-normal-state-map)
-         (bind-key ",l" 'evil-window-right        evil-normal-state-map)
   )
 
 ; magit ------------------------------------ {{{2
