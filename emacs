@@ -130,8 +130,22 @@
          ;; evil init
          (evil-mode 1)
 
+  :config
          ;; replace default ',' key mapping, as it's used for evil-leader
-         (bind-key "C-s" 'evil-repeat-find-char-reverse evil-normal-state-map)
+         (bind-key "C-s"     'evil-repeat-find-char-reverse  evil-normal-state-map)
+         ;; vim's ':qa!' equivalent
+         (bind-key "S-z S-a" 'kill-emacs                     evil-normal-state-map)
+
+         ;; exit edits by 'escape' key
+         ;(bind-key "escape"     "C-g"        evil-normal-state-map)
+         ;(bind-key (kbd "ESC")  (kbd "C-g")  evil-normal-state-map)
+         ;(define-key evil-normal-state-map           "\e"        'keyboard-quit)
+         ;(define-key evil-visual-state-map           "\e"        'keyboard-quit)
+         ;(define-key minibuffer-local-completion-map (kbd "ESC") 'abort-recursive-edit)
+         ;(define-key minibuffer-local-must-match-map (kbd "ESC") 'abort-recursive-edit)
+         ;(define-key minibuffer-local-isearch-map    (kbd "ESC") 'abort-recursive-edit)
+         ;(define-key minibuffer-local-ns-map         (kbd "escape") 'abort-recursive-edit)
+         ;(define-key minibuffer-local-map            (kbd "escape") 'abort-recursive-edit)
   )
 
 ; magit ------------------------------------ {{{2
