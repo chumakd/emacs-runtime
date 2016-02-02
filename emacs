@@ -135,9 +135,8 @@
 (use-package magit)
 
 ; powerline -------------------------------- {{{2
-(use-package powerline
-  :config  (if (display-graphic-p)
-               (powerline-center-evil-theme)))
+(use-package powerline-evil
+  :config  (powerline-evil-vim-theme))
 
 ; rainbow-delimiters ----------------------- {{{2
 (use-package rainbow-delimiters
