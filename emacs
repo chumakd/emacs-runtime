@@ -109,6 +109,9 @@
                     ;; togglers
                     (evil-leader/set-key "tw" 'toggle-truncate-lines)
                     (evil-leader/set-key "tg" 'toggle-color-theme)
+                    ;; edit config file
+                    (evil-leader/set-key "ve" '(lambda () (interactive)
+                                                   (find-file "~/.emacs")))
                     ;; window handling
                     (evil-leader/set-key "w=" 'balance-windows)
                     (evil-leader/set-key "wf" 'evil-window-set-height)
