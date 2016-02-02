@@ -112,6 +112,8 @@
                     ;; edit config file
                     (evil-leader/set-key "ve" '(lambda () (interactive)
                                                    (find-file "~/.emacs")))
+                    (evil-leader/set-key "vs" '(lambda () (interactive)
+                                                   (load-file "~/.emacs")))
                     ;; window handling
                     (evil-leader/set-key "w=" 'balance-windows)
                     (evil-leader/set-key "wf" 'evil-window-set-height)
@@ -126,26 +128,19 @@
                     (evil-leader/set-key "k"  'evil-window-up)
                     (evil-leader/set-key "l"  'evil-window-right)
            )
-
-         ;; evil init
-         (evil-mode 1)
-
   :config
+         (evil-mode 1)
+         ;(setq evil-intercept-esc 'always)
+
          ;; replace default ',' key mapping, as it's used for evil-leader
          (bind-key "C-s"     'evil-repeat-find-char-reverse  evil-normal-state-map)
          ;; vim's ':qa!' equivalent
          (bind-key "S-z S-a" 'kill-emacs                     evil-normal-state-map)
+  )
 
-         ;; exit edits by 'escape' key
-         ;(bind-key "escape"     "C-g"        evil-normal-state-map)
-         ;(bind-key (kbd "ESC")  (kbd "C-g")  evil-normal-state-map)
-         ;(define-key evil-normal-state-map           "\e"        'keyboard-quit)
-         ;(define-key evil-visual-state-map           "\e"        'keyboard-quit)
-         ;(define-key minibuffer-local-completion-map (kbd "ESC") 'abort-recursive-edit)
-         ;(define-key minibuffer-local-must-match-map (kbd "ESC") 'abort-recursive-edit)
-         ;(define-key minibuffer-local-isearch-map    (kbd "ESC") 'abort-recursive-edit)
-         ;(define-key minibuffer-local-ns-map         (kbd "escape") 'abort-recursive-edit)
-         ;(define-key minibuffer-local-map            (kbd "escape") 'abort-recursive-edit)
+(use-package evil-escape
+  :config  (global-set-key (kbd "<escape>") 'evil-escape)
+           (evil-escape-mode)
   )
 
 ; magit ------------------------------------ {{{2
