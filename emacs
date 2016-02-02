@@ -133,9 +133,9 @@
          ;(setq evil-intercept-esc 'always)
 
          ;; replace default ',' key mapping, as it's used for evil-leader
-         (bind-key "C-s"     'evil-repeat-find-char-reverse  evil-normal-state-map)
+         (bind-key "C-s"  'evil-repeat-find-char-reverse  evil-normal-state-map)
          ;; vim's ':qa!' equivalent
-         (bind-key "S-z S-a" 'kill-emacs                     evil-normal-state-map)
+         (bind-key "Z A"  'kill-emacs                     evil-normal-state-map)
   )
 
 (use-package evil-escape
