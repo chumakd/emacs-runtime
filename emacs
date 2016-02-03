@@ -122,6 +122,15 @@
                     (evil-leader/set-key "ws" 'evil-window-split)
                     (evil-leader/set-key "wv" 'evil-window-vsplit)
                     (evil-leader/set-key "cc" 'evil-window-delete)
+                    ;; window closing
+                    (evil-leader/set-key "cj" '(lambda () (interactive)
+                                                 (evil-window-down 1) (evil-window-delete)))
+                    (evil-leader/set-key "ck" '(lambda () (interactive)
+                                                 (evil-window-up 1) (evil-window-delete)))
+                    (evil-leader/set-key "ch" '(lambda () (interactive)
+                                                 (evil-window-left 1) (evil-window-delete)))
+                    (evil-leader/set-key "cl" '(lambda () (interactive)
+                                                 (evil-window-right 1) (evil-window-delete)))
                     ;; window navigation
                     (evil-leader/set-key "h"  'evil-window-left)
                     (evil-leader/set-key "j"  'evil-window-down)
