@@ -118,6 +118,8 @@
   :config (ac-config-default))
 
 ; evil mode -------------------------------- {{{2
+
+; evil {{{3
 (use-package evil
   :init
          ;; key bindings using evil leader
@@ -169,6 +171,13 @@
          (bind-key "Z A"  'kill-emacs                     evil-normal-state-map)
   )
 
+; evil-args {{{3
+(use-package evil-args
+  :config  (bind-key "a" 'evil-inner-arg evil-inner-text-objects-map)
+           (bind-key "a" 'evil-outer-arg evil-outer-text-objects-map)
+  )
+
+; evil-escape {{{3
 (use-package evil-escape
   :config  (global-set-key (kbd "<escape>") 'evil-escape)
            (evil-escape-mode)
