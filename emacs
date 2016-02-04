@@ -86,6 +86,25 @@
 ;; always follow symlinks to version controlled files
 (setq vc-follow-symlinks t)
 
+;; perform yes-or-no prompts using the echo area and keyboard input.
+(setq use-dialog-box nil)
+
+;; backups location
+(setq backup-directory-alist '((".*" . "~/.emacs.d/backup")))
+
+;; weeks should begin on Monday
+(setq calendar-week-start-day 1)
+
+;; set PATH
+(setenv "PATH" (concat "/opt/local/bin:" (getenv "PATH")))
+(setq exec-path (cons "/opt/local/bin" exec-path))
+
+;; highlight marked region
+(transient-mark-mode t)
+
+;; enable incremental minibuffer completion
+(icomplete-mode t)
+
 ; Key-binding ----------------------------------------------------------- {{{1
 
 ;; map help-key to C-? and use C-h as backspace
@@ -108,6 +127,9 @@
            :config  (evil-leader/set-leader ",")
                     ;; togglers
                     (evil-leader/set-key "tw" 'toggle-truncate-lines)
+                    (evil-leader/set-key "tl" 'whitespace-mode)
+                    (evil-leader/set-key "te" 'view-mode)
+                    (evil-leader/set-key "ts" 'ispell)
                     (evil-leader/set-key "tg" 'toggle-color-theme)
                     ;; edit config file
                     (evil-leader/set-key "ve" '(lambda () (interactive)
