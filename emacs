@@ -174,14 +174,16 @@
 ; evil-args {{{3
 (use-package evil-args
   :config  (bind-key "a" 'evil-inner-arg evil-inner-text-objects-map)
-           (bind-key "a" 'evil-outer-arg evil-outer-text-objects-map)
-  )
+           (bind-key "a" 'evil-outer-arg evil-outer-text-objects-map))
+
+; evil-commentary {{{3
+(use-package evil-commentary
+  :config  (evil-commentary-mode))
 
 ; evil-escape {{{3
 (use-package evil-escape
   :config  (global-set-key (kbd "<escape>") 'evil-escape)
-           (evil-escape-mode)
-  )
+           (evil-escape-mode))
 
 ; magit ------------------------------------ {{{2
 (use-package magit)
