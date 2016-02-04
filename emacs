@@ -180,6 +180,10 @@
 (use-package evil-commentary
   :config  (evil-commentary-mode))
 
+; evil-easymotion {{{3
+(use-package evil-easymotion
+  :config  (evilem-default-keybindings "SPC"))
+
 ; evil-escape {{{3
 (use-package evil-escape
   :config  (global-set-key (kbd "<escape>") 'evil-escape)
