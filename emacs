@@ -184,6 +184,9 @@
 (use-package evil-easymotion
   :config  (evilem-default-keybindings "SPC"))
 
+; evil-ediff {{{3
+(use-package evil-ediff)
+
 ; evil-escape {{{3
 (use-package evil-escape
   :config  (global-set-key (kbd "<escape>") 'evil-escape)
