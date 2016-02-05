@@ -69,6 +69,23 @@
 ;; enable line numbers
 (set-default 'column-number-mode t)
 
+;; TAB indentation
+(global-set-key (kbd "TAB") 'tab-to-tab-stop)
+(setq-default tab-always-indent nil)  ; just insert a TAB, don't indent the line
+(setq-default indent-tabs-mode  nil)  ; replace TABs with spaces
+(setq-default tab-width 4)
+
+(defun toggle-tabs ()
+    (interactive)
+    (setq indent-tabs-mode (if (eq indent-tabs-mode t) nil t))
+    (setq tab-width (if (= tab-width 8) 4 8))
+    (message "set tab-width=%d indent-tabs-mode=%s" tab-width indent-tabs-mode)
+    (redraw-display)
+    )
+
+;; answer yes/no questions with y/n
+(fset 'yes-or-no-p 'y-or-n-p)
+
 ;; highlight matching parenthesis
 (setq show-paren-delay 0)
 (show-paren-mode 1)
@@ -105,6 +122,9 @@
 ;; enable incremental minibuffer completion
 (icomplete-mode t)
 
+;; disable blinking cursor
+(blink-cursor-mode 0)
+
 ; Key-binding ----------------------------------------------------------- {{{1
 
 ;; map help-key to C-? and use C-h as backspace
@@ -128,6 +148,7 @@
            :init    (global-evil-leader-mode)
            :config  (evil-leader/set-leader ",")
                     ;; togglers
+                    (evil-leader/set-key "tt" 'toggle-tabs)
                     (evil-leader/set-key "tw" 'toggle-truncate-lines)
                     (evil-leader/set-key "tl" 'whitespace-mode)
                     (evil-leader/set-key "te" 'view-mode)
