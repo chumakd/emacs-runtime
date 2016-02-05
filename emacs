@@ -192,6 +192,12 @@
   :config  (global-set-key (kbd "<escape>") 'evil-escape)
            (evil-escape-mode))
 
+; evil-exchange {{{3
+(use-package evil-exchange
+  :config  ;(evil-exchange-install)
+           ; experimental, if doesn't work use default init, commented above
+           (evil-exchange-cx-install))
+
 ; magit ------------------------------------ {{{2
 (use-package magit)
 
