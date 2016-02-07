@@ -257,6 +257,10 @@
 ; evil-org {{{3
 (use-package evil-org)
 
+; evil-rsi {{{3
+(use-package evil-rsi
+  :config  (evil-rsi-mode))
+
 ; powerline -------------------------------- {{{2
 (use-package powerline-evil
   :config  (powerline-evil-vim-theme))
