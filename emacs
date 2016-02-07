@@ -229,6 +229,9 @@
 (use-package evil-indent-plus
   :config  (evil-indent-plus-default-bindings))
 
+; evil-jumper {{{3
+(use-package evil-jumper)
+
 ; magit ------------------------------------ {{{2
 (use-package magit)
 
