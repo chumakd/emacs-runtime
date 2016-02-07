@@ -248,6 +248,12 @@
 (use-package evil-mc
   :config  (global-evil-mc-mode 1))
 
+; evil-nerd-commenter {{{3
+(use-package evil-nerd-commenter
+  :config  (bind-key "\\cc" 'evilnc-comment-or-uncomment-lines evil-normal-state-map)
+           (bind-key "\\cy" 'evilnc-copy-and-comment-lines     evil-normal-state-map)
+  )
+
 ; powerline -------------------------------- {{{2
 (use-package powerline-evil
   :config  (powerline-evil-vim-theme))
