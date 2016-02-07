@@ -232,8 +232,9 @@
 ; evil-jumper {{{3
 (use-package evil-jumper)
 
-; magit ------------------------------------ {{{2
-(use-package magit)
+; evil-magit {{{3
+(use-package evil-magit
+  :config  (evil-define-key evil-magit-state magit-mode-map "?" 'evil-search-backward))
 
 ; powerline -------------------------------- {{{2
 (use-package powerline-evil
