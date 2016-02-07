@@ -147,40 +147,44 @@
          (use-package evil-leader
            :init    (global-evil-leader-mode)
            :config  (evil-leader/set-leader ",")
-                    ;; togglers
-                    (evil-leader/set-key "tt" 'toggle-tabs)
-                    (evil-leader/set-key "tw" 'toggle-truncate-lines)
-                    (evil-leader/set-key "tl" 'whitespace-mode)
-                    (evil-leader/set-key "te" 'view-mode)
-                    (evil-leader/set-key "ts" 'ispell)
-                    (evil-leader/set-key "tg" 'toggle-color-theme)
-                    ;; edit config file
-                    (evil-leader/set-key "ve" '(lambda () (interactive)
-                                                   (find-file "~/.emacs")))
-                    (evil-leader/set-key "vs" '(lambda () (interactive)
-                                                   (load-file "~/.emacs")))
-                    ;; window handling
-                    (evil-leader/set-key "w=" 'balance-windows)
-                    (evil-leader/set-key "wf" 'evil-window-set-height)
-                    (evil-leader/set-key "wn" 'evil-window-new)
-                    (evil-leader/set-key "wp" 'evil-window-prev)
-                    (evil-leader/set-key "ws" 'evil-window-split)
-                    (evil-leader/set-key "wv" 'evil-window-vsplit)
-                    (evil-leader/set-key "cc" 'evil-window-delete)
-                    ;; window closing
-                    (evil-leader/set-key "cj" '(lambda () (interactive)
-                                                 (evil-window-down 1) (evil-window-delete)))
-                    (evil-leader/set-key "ck" '(lambda () (interactive)
-                                                 (evil-window-up 1) (evil-window-delete)))
-                    (evil-leader/set-key "ch" '(lambda () (interactive)
-                                                 (evil-window-left 1) (evil-window-delete)))
-                    (evil-leader/set-key "cl" '(lambda () (interactive)
-                                                 (evil-window-right 1) (evil-window-delete)))
-                    ;; window navigation
-                    (evil-leader/set-key "h"  'evil-window-left)
-                    (evil-leader/set-key "j"  'evil-window-down)
-                    (evil-leader/set-key "k"  'evil-window-up)
-                    (evil-leader/set-key "l"  'evil-window-right)
+                    (evil-leader/set-key
+                        ;; togglers
+                        "tt" 'toggle-tabs
+                        "tw" 'toggle-truncate-lines
+                        "tl" 'whitespace-mode
+                        "te" 'view-mode
+                        "ts" 'ispell
+                        "tg" 'toggle-color-theme
+
+                        ;; edit config file
+                        "ve" '(lambda () (interactive) (find-file "~/.emacs"))
+                        "vs" '(lambda () (interactive) (load-file "~/.emacs"))
+
+                        ;; window handling
+                        "w=" 'balance-windows
+                        "wf" 'evil-window-set-height
+                        "wn" 'evil-window-new
+                        "wp" 'evil-window-prev
+                        "ws" 'evil-window-split
+                        "wv" 'evil-window-vsplit
+                        "cc" 'evil-window-delete
+
+                        ;; window navigation
+                        "h"  'evil-window-left
+                        "j"  'evil-window-down
+                        "k"  'evil-window-up
+                        "l"  'evil-window-right
+
+                        ;; window closing
+                        "cj" '(lambda () (interactive)
+                                  (evil-window-down 1) (evil-window-delete))
+                        "ck" '(lambda () (interactive)
+                                  (evil-window-up 1) (evil-window-delete))
+                        "ch" '(lambda () (interactive)
+                                  (evil-window-left 1) (evil-window-delete))
+                        "cl" '(lambda () (interactive)
+                                  (evil-window-right 1) (evil-window-delete))
+                    )
            )
   :config
          (evil-mode 1)
