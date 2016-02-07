@@ -240,6 +240,10 @@
 (use-package evil-matchit
   :config  (global-evil-matchit-mode 1))
 
+; evil-mc {{{3
+(use-package evil-mc
+  :config  (global-evil-mc-mode 1))
+
 ; powerline -------------------------------- {{{2
 (use-package powerline-evil
   :config  (powerline-evil-vim-theme))
