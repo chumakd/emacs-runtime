@@ -204,7 +204,7 @@
 ; evil-easymotion {{{3
 (use-package evil-easymotion
   :config  (setq evilem-style 'at)
-           (evilem-default-keybindings "SPC"))
+           (evilem-default-keybindings "C-\\"))
 
 ; evil-ediff {{{3
 (use-package evil-ediff)
