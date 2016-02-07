@@ -225,6 +225,10 @@
   :config  ;(bind-key "SPC" 'god-local-mode            global-map)
            (bind-key "SPC" 'evil-execute-in-god-state evil-normal-state-map))
 
+; evil-indent-plus {{{3
+(use-package evil-indent-plus
+  :config  (evil-indent-plus-default-bindings))
+
 ; magit ------------------------------------ {{{2
 (use-package magit)
 
