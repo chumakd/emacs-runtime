@@ -254,6 +254,9 @@
            (bind-key "\\cy" 'evilnc-copy-and-comment-lines     evil-normal-state-map)
   )
 
+; evil-org {{{3
+(use-package evil-org)
+
 ; powerline -------------------------------- {{{2
 (use-package powerline-evil
   :config  (powerline-evil-vim-theme))
