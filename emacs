@@ -236,6 +236,10 @@
 (use-package evil-magit
   :config  (evil-define-key evil-magit-state magit-mode-map "?" 'evil-search-backward))
 
+; evil-matchit {{{3
+(use-package evil-matchit
+  :config  (global-evil-matchit-mode 1))
+
 ; powerline -------------------------------- {{{2
 (use-package powerline-evil
   :config  (powerline-evil-vim-theme))
