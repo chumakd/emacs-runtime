@@ -276,6 +276,10 @@
            (bind-key "C" 'evil-textobj-column-WORD evil-inner-text-objects-map)
   )
 
+; evil-visualstar {{{3
+(use-package evil-visualstar
+  :config  (global-evil-visualstar-mode))
+
 ; powerline -------------------------------- {{{2
 (use-package powerline-evil
   :config  (powerline-evil-vim-theme))
