@@ -280,6 +280,10 @@
 (use-package evil-visualstar
   :config  (global-evil-visualstar-mode))
 
+; neotree ---------------------------------- {{{2
+(use-package neotree
+  :config  (global-set-key [f8] 'neotree-toggle))
+
 ; powerline -------------------------------- {{{2
 (use-package powerline-evil
   :config  (powerline-evil-vim-theme))
