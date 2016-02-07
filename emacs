@@ -270,6 +270,12 @@
 (use-package evil-surround
   :config  (global-evil-surround-mode 1))
 
+; evil-textobj-column {{{3
+(use-package evil-textobj-column
+  :config  (bind-key "c" 'evil-textobj-column-word evil-inner-text-objects-map)
+           (bind-key "C" 'evil-textobj-column-WORD evil-inner-text-objects-map)
+  )
+
 ; powerline -------------------------------- {{{2
 (use-package powerline-evil
   :config  (powerline-evil-vim-theme))
