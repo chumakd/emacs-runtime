@@ -217,8 +217,13 @@
 ; evil-exchange {{{3
 (use-package evil-exchange
   :config  ;(evil-exchange-install)
-           ; experimental, if doesn't work use default init, commented above
+           ; experimental, if doesn't work use default init command above
            (evil-exchange-cx-install))
+
+; evil-god-state {{{3
+(use-package evil-god-state
+  :config  ;(bind-key "SPC" 'god-local-mode            global-map)
+           (bind-key "SPC" 'evil-execute-in-god-state evil-normal-state-map))
 
 ; magit ------------------------------------ {{{2
 (use-package magit)
