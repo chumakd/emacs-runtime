@@ -261,6 +261,11 @@
 (use-package evil-rsi
   :config  (evil-rsi-mode))
 
+; evil-search-highlight-persist {{{3
+(use-package evil-search-highlight-persist
+  :config  (evil-leader/set-key "tn" 'evil-search-highlight-persist-remove-all)
+           (global-evil-search-highlight-persist t))
+
 ; powerline -------------------------------- {{{2
 (use-package powerline-evil
   :config  (powerline-evil-vim-theme))
