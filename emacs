@@ -284,6 +284,24 @@
 (use-package neotree
   :config  (global-set-key [f8] 'neotree-toggle))
 
+; origami ---------------------------------- {{{2
+(use-package origami
+  :config (bind-key "zo" 'origami-open-node               evil-normal-state-map)
+          (bind-key "zO" 'origami-open-node-recursively   evil-normal-state-map)
+          (bind-key "zv" 'origami-show-node               evil-normal-state-map)
+          (bind-key "zV" 'origami-show-only-node          evil-normal-state-map)
+          (bind-key "zc" 'origami-close-node              evil-normal-state-map)
+          (bind-key "zC" 'origami-close-node-recursively  evil-normal-state-map)
+          (bind-key "za" 'origami-forward-toggle-node     evil-normal-state-map)
+          (bind-key "zA" 'origami-recursively-toggle-node evil-normal-state-map)
+          (bind-key "zR" 'origami-open-all-nodes          evil-normal-state-map)
+          (bind-key "zM" 'origami-close-all-nodes         evil-normal-state-map)
+          (bind-key "zj" 'origami-next-fold               evil-normal-state-map)
+          (bind-key "zk" 'origami-previous-fold           evil-normal-state-map)
+          (bind-key "zn" '(lambda () (interactive) (origami-mode 0)) evil-normal-state-map)
+          (bind-key "zN" '(lambda () (interactive) (origami-mode 1)) evil-normal-state-map)
+  )
+
 ; powerline -------------------------------- {{{2
 (use-package powerline-evil
   :config  (powerline-evil-vim-theme))
