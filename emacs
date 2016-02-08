@@ -258,8 +258,9 @@
 (use-package evil-org)
 
 ; evil-rsi {{{3
-(use-package evil-rsi
-  :config  (evil-rsi-mode))
+(use-package evil-rsi)
+  ; disabled by default, cause it messes up with C-e in normal mode
+  ;:config  (evil-rsi-mode))
 
 ; evil-search-highlight-persist {{{3
 (use-package evil-search-highlight-persist
@@ -279,6 +280,10 @@
 ; evil-visualstar {{{3
 (use-package evil-visualstar
   :config  (global-evil-visualstar-mode))
+
+; highlight-indentation -------------------- {{{2
+(use-package highlight-indentation
+  :config  (evil-leader/set-key "ti" 'highlight-indentation-mode))
 
 ; neotree ---------------------------------- {{{2
 (use-package neotree
