@@ -290,6 +290,15 @@
   :config  (evil-leader/set-key "tc" 'fci-mode)
            (setq-default fill-column 80))
 
+; flx-ido ---------------------------------- {{{2
+(use-package flx-ido
+  :config  (ido-mode 1)
+           (ido-everywhere 1)
+           (flx-ido-mode 1)
+           (setq ido-enable-flex-matching t)  ; disable ido faces to see flx highlights.
+           (setq ido-use-faces nil)
+  )
+
 ; neotree ---------------------------------- {{{2
 (use-package neotree
   :config  (global-set-key [f8] 'neotree-toggle))
