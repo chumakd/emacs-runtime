@@ -285,6 +285,11 @@
 (use-package highlight-indentation
   :config  (evil-leader/set-key "ti" 'highlight-indentation-mode))
 
+; fill-column-indicator -------------------- {{{2
+(use-package fill-column-indicator
+  :config  (evil-leader/set-key "tc" 'fci-mode)
+           (setq-default fill-column 80))
+
 ; neotree ---------------------------------- {{{2
 (use-package neotree
   :config  (global-set-key [f8] 'neotree-toggle))
