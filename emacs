@@ -24,7 +24,9 @@
 
 ; GUI ------------------------------------------------------------------- {{{1
 
-;; color theme
+;; color theme ----------------------------- {{{2
+(use-package solarized-theme)
+
 (defvar default-color-theme   'solarized-dark)
 (defvar alternate-color-theme 'solarized-light)
 (defvar current-color-theme    default-color-theme)
@@ -38,24 +40,26 @@
           (prog1 alternate-color-theme
                  (setq alternate-color-theme current-color-theme))))
 
-(use-package solarized-theme
-  :config  (if (display-graphic-p)
-               (load-theme current-color-theme t)))
+(if (display-graphic-p)
+    (load-theme current-color-theme t)
+    (if (getenv "ITERM_PROFILE")
+        (load-theme current-color-theme t)
+        (load-theme 'wombat t)))
 
-;; font
+;; font ------------------------------------ {{{2
 (if (display-graphic-p)
     (when (eq system-type 'darwin)
           (set-face-attribute 'default nil :family "Input")
           (set-face-attribute 'default nil :height 170)))
 
-;; interface
+;; interface ------------------------------- {{{2
 (when (display-graphic-p)
       (tool-bar-mode -1)              ; disable toolbar
       (scroll-bar-mode -1)            ; disable scrollbars
       (setq inhibit-splash-screen t)  ; disable welcome screen
       )
 
-;; window size and position
+;; window size and position ---------------- {{{2
 (when (display-graphic-p)
       (set-frame-position (selected-frame) 300 0)
       (add-to-list 'default-frame-alist '(width  . 80))
