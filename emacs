@@ -134,8 +134,12 @@
 ; Modes ----------------------------------------------------------------- {{{1
 
 ; auto-complete ---------------------------- {{{2
-(use-package auto-complete
-  :config (ac-config-default))
+;(use-package auto-complete
+  ;:config (ac-config-default))
+
+; company ---------------------------------- {{{2
+(use-package company
+  :config (global-company-mode))
 
 ; evil mode -------------------------------- {{{2
 
