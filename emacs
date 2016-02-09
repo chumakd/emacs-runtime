@@ -340,6 +340,10 @@
 ; web-mode --------------------------------- {{{2
 (use-package web-mode)
 
+; which-key -------------------------------- {{{2
+(use-package which-key
+  :config  (which-key-mode))
+
 ; yasnippet -------------------------------- {{{2
 (use-package yasnippet
   :config  (yas-reload-all)
