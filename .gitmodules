@@ -1,0 +1,4 @@
+[submodule "p/spacemacs"]
+	path = p/spacemacs
+	url = https://github.com/syl20bnr/spacemacs.git
+    ignore = untracked
