@@ -336,5 +336,10 @@
 ; web-mode --------------------------------- {{{2
 (use-package web-mode)
 
+; yasnippet -------------------------------- {{{2
+(use-package yasnippet
+  :config  (yas-reload-all)
+           (add-hook 'prog-mode-hook #'yas-minor-mode))
+
 ; emacs auto-config ----------------------------------------------------- {{{1
 
