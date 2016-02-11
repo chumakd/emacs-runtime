@@ -166,8 +166,8 @@
                         "tg" 'toggle-color-theme
 
                         ;; edit config file
-                        "ve" '(lambda () (interactive) (find-file "~/.emacs"))
-                        "vs" '(lambda () (interactive) (load-file "~/.emacs"))
+                        "ve" '(lambda () (interactive) (find-file "~/.emacs.d/init.el"))
+                        "vs" '(lambda () (interactive) (load-file "~/.emacs.d/init.el"))
 
                         ;; window handling
                         "w=" 'balance-windows
