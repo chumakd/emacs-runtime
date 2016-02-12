@@ -203,6 +203,14 @@
          (bind-key "C-s"  'evil-repeat-find-char-reverse  evil-normal-state-map)
          ;; vim's ':qa!' equivalent
          (bind-key "Z A"  'kill-emacs                     evil-normal-state-map)
+
+         ;; don't jump to next item on search, just highlight the current one
+         (defadvice evil-search-word-forward
+             (after advice-for-evil-search-word-forward activate)
+             (evil-search-previous))
+         (defadvice evil-search-word-backward
+             (after advice-for-evil-search-word-backward activate)
+             (evil-search-previous))
   )
 
 ; evil-args {{{3
