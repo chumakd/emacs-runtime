@@ -132,7 +132,7 @@
 
 ; Key-binding ----------------------------------------------------------- {{{1
 
-;; map help-key to C-? and use C-h as backspace
+;; map help-key to C-, and use C-h as backspace
 (global-set-key (kbd "C-h") 'delete-backward-char)
 (global-set-key (kbd "C-,") 'help-command)
 
