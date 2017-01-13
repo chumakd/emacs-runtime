@@ -42,7 +42,7 @@
 
 (if (display-graphic-p)
     (load-theme current-color-theme t)
-    (if (getenv "ITERM_PROFILE")
+    (if (string-match "^Solarized" (getenv "ITERM_PROFILE"))
         (load-theme current-color-theme t)
         (load-theme 'wombat t)))
 
