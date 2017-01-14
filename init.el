@@ -19,6 +19,7 @@
       (package-refresh-contents)
       (package-install 'use-package)))
 
+;; tell use-package to install missing packages automatically
 (setq use-package-always-ensure t)
 (require 'use-package)
 
@@ -145,6 +146,10 @@
 ; company ---------------------------------- {{{2
 (use-package company
   :config (global-company-mode))
+
+; editorconfig ----------------------------- {{{2
+(use-package editorconfig
+  :config (editorconfig-mode 1))
 
 ; evil mode -------------------------------- {{{2
 
