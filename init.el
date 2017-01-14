@@ -323,7 +323,10 @@
 
 ; neotree ---------------------------------- {{{2
 (use-package neotree
-  :config  (global-set-key [f8] 'neotree-toggle))
+  :config  (global-set-key [f8] 'neotree-toggle)
+           (evil-define-key 'normal neotree-mode-map (kbd "q")   'neotree-hide)
+           (evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
+  )
 
 ; origami ---------------------------------- {{{2
 (use-package origami
