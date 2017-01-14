@@ -305,6 +305,9 @@
 ; evil-visual-mark-mode {{{3
 (use-package evil-visual-mark-mode)
 
+; evil-visual-replace {{{3
+(use-package evil-visual-replace)
+
 ; evil-visualstar {{{3
 (use-package evil-visualstar
   :config  (global-evil-visualstar-mode))
