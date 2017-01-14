@@ -302,6 +302,9 @@
            (bind-key "C" 'evil-textobj-column-WORD evil-inner-text-objects-map)
   )
 
+; evil-visual-mark-mode {{{3
+(use-package evil-visual-mark-mode)
+
 ; evil-visualstar {{{3
 (use-package evil-visualstar
   :config  (global-evil-visualstar-mode))
