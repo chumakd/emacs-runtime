@@ -350,6 +350,10 @@
 (use-package powerline-evil
   :config  (powerline-evil-vim-theme))
 
+; projectile ------------------------------- {{{2
+(use-package projectile
+  :config  (setq projectile-switch-project-action 'neotree-projectile-action))
+
 ; rainbow-delimiters ----------------------- {{{2
 (use-package rainbow-delimiters
   :config (add-hook 'emacs-lisp-mode-hook #'rainbow-delimiters-mode)
