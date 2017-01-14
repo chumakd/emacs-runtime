@@ -276,6 +276,9 @@
            (bind-key "\\cy" 'evilnc-copy-and-comment-lines     evil-normal-state-map)
   )
 
+; evil-numbers {{{3
+(use-package evil-numbers)
+
 ; evil-org {{{3
 (use-package evil-org)
 
