@@ -204,6 +204,8 @@
          (evil-mode 1)
          ;(setq evil-intercept-esc 'always)
 
+         ;; alternative help-command mapping
+         (bind-key "\\h"  'help-command                   evil-normal-state-map)
          ;; replace default ',' key mapping, as it's used for evil-leader
          (bind-key "C-s"  'evil-repeat-find-char-reverse  evil-normal-state-map)
          ;; vim's ':qa!' equivalent
