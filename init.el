@@ -57,7 +57,6 @@
 (when (display-graphic-p)
       (tool-bar-mode -1)              ; disable toolbar
       (scroll-bar-mode -1)            ; disable scrollbars
-      (setq inhibit-splash-screen t)  ; disable welcome screen
       )
 
 ;; window size and position ---------------- {{{2
@@ -67,6 +66,9 @@
       (add-to-list 'default-frame-alist '(height . 38)))
 
 ; Options --------------------------------------------------------------- {{{1
+
+;; disable welcome screen
+(setq inhibit-splash-screen t)
 
 ;; disable line wrapping
 (set-default 'truncate-lines t)
