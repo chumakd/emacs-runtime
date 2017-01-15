@@ -314,6 +314,10 @@
 (use-package evil-visualstar
   :config  (global-evil-visualstar-mode))
 
+; expand-region ---------------------------- {{{2
+(use-package expand-region
+  :config  (bind-key "+"  'er/expand-region  evil-normal-state-map))
+
 ; highlight-indentation -------------------- {{{2
 (use-package highlight-indentation
   :config  (evil-leader/set-key "ti" 'highlight-indentation-mode))
