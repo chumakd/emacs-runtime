@@ -303,6 +303,11 @@
 (use-package evil-surround
   :config  (global-evil-surround-mode 1))
 
+; evil-tabs {{{3
+;; disabled, because it's still very raw
+;(use-package evil-tabs
+;  :config  (global-evil-tabs-mode t))
+
 ; evil-textobj-column {{{3
 (use-package evil-textobj-column
   :config  (bind-key "c" 'evil-textobj-column-word evil-inner-text-objects-map)
