@@ -222,6 +222,9 @@
              (evil-search-previous))
   )
 
+; evil-anzu {{{3
+(use-package evil-anzu)
+
 ; evil-args {{{3
 (use-package evil-args
   :config  (bind-key "a" 'evil-inner-arg evil-inner-text-objects-map)
