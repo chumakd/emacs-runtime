@@ -369,6 +369,9 @@
 (use-package highlight-indentation
   :config  (evil-leader/set-key "ti" 'highlight-indentation-mode))
 
+; info+ ------------------------------------ {{{2
+(use-package info+)
+
 ; irony ------------------------------------ {{{2
 (use-package irony
   :config  (add-hook 'c++-mode-hook  'irony-mode)
