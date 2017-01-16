@@ -328,6 +328,10 @@
 (use-package expand-region
   :config  (bind-key "+"  'er/expand-region  evil-normal-state-map))
 
+; eyebrowse -------------------------------- {{{2
+(use-package eyebrowse
+  :config  (eyebrowse-mode t))
+
 ; highlight-indentation -------------------- {{{2
 (use-package highlight-indentation
   :config  (evil-leader/set-key "ti" 'highlight-indentation-mode))
