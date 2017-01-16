@@ -403,10 +403,6 @@
           (bind-key "zN" '(lambda () (interactive) (origami-mode 1)) evil-normal-state-map)
   )
 
-; powerline -------------------------------- {{{2
-(use-package powerline-evil
-  :config  (powerline-evil-vim-theme))
-
 ; projectile ------------------------------- {{{2
 (use-package projectile
   :config  (setq projectile-switch-project-action 'neotree-projectile-action))
@@ -419,6 +415,15 @@
 ; relative-line-numbers -------------------- {{{2
 (use-package relative-line-numbers
   :config  (global-relative-line-numbers-mode))
+
+; spaceline -------------------------------- {{{2
+(use-package spaceline
+  :config  (require 'spaceline-config)
+           (setq powerline-default-separator nil)
+           (setq spaceline-highlight-face-func 'spaceline-highlight-face-evil-state)
+           (spaceline-spacemacs-theme)
+           (spaceline-toggle-window-number-off)
+           (spaceline-info-mode))
 
 ; undo-tree -------------------------------- {{{2
 (use-package undo-tree)
