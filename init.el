@@ -350,6 +350,21 @@
            (setq ido-use-faces nil)
   )
 
+; flycheck --------------------------------- {{{2
+(use-package flycheck)
+
+(use-package flycheck-bashate
+  :config  (flycheck-bashate-setup))
+
+(use-package flycheck-checkbashisms
+  :config  (flycheck-checkbashisms-setup))
+
+(use-package flycheck-color-mode-line
+  :config  (add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode))
+
+(use-package flycheck-irony
+  :config  (add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
+
 ; highlight-indentation -------------------- {{{2
 (use-package highlight-indentation
   :config  (evil-leader/set-key "ti" 'highlight-indentation-mode))
