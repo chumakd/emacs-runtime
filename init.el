@@ -333,10 +333,6 @@
 (use-package eyebrowse
   :config  (eyebrowse-mode t))
 
-; highlight-indentation -------------------- {{{2
-(use-package highlight-indentation
-  :config  (evil-leader/set-key "ti" 'highlight-indentation-mode))
-
 ; fill-column-indicator -------------------- {{{2
 (use-package fill-column-indicator
   :config  (evil-leader/set-key "tc" 'fci-mode)
@@ -350,6 +346,10 @@
            (setq ido-enable-flex-matching t)  ; disable ido faces to see flx highlights.
            (setq ido-use-faces nil)
   )
+
+; highlight-indentation -------------------- {{{2
+(use-package highlight-indentation
+  :config  (evil-leader/set-key "ti" 'highlight-indentation-mode))
 
 ; neotree ---------------------------------- {{{2
 (use-package neotree
