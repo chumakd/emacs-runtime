@@ -1,5 +1,6 @@
+;; -*- mode: emacs-lisp -*-
 ;; ---------------------------------------------------------------------- {{{1
-;; vim: filetype=lisp  expandtab foldmethod=marker
+;; vim: filetype=lisp  expandtab  shiftwidth=2  foldmethod=marker
 
 ; Packages -------------------------------------------------------------- {{{1
 
