@@ -448,5 +448,14 @@
   :config  (yas-reload-all)
            (add-hook 'prog-mode-hook #'yas-minor-mode))
 
+; ZZZ diminish ----------------------------- {{{2
+;; should be near the end so that any minor modes will already have been
+;; loaded by the time they're to be converted to diminished modes.
+(use-package diminish
+  :config (diminish 'abbrev-mode "Abv")
+          (diminish 'editorconfig-mode)
+          (diminish 'jiggle-mode)
+          (diminish 'undo-tree-mode "U3"))
+
 ; emacs auto-config ----------------------------------------------------- {{{1
 
