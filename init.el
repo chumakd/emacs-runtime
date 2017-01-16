@@ -150,6 +150,9 @@
 (use-package company
   :config (global-company-mode))
 
+(use-package company-irony
+  :config (add-to-list 'company-backends 'company-irony))
+
 ; editorconfig ----------------------------- {{{2
 (use-package editorconfig
   :config (editorconfig-mode 1))
@@ -350,6 +353,15 @@
 ; highlight-indentation -------------------- {{{2
 (use-package highlight-indentation
   :config  (evil-leader/set-key "ti" 'highlight-indentation-mode))
+
+; irony ------------------------------------ {{{2
+(use-package irony
+  :config  (add-hook 'c++-mode-hook  'irony-mode)
+           (add-hook 'c-mode-hook    'irony-mode)
+           (add-hook 'objc-mode-hook 'irony-mode))
+
+(use-package irony-eldoc
+  :config  (add-hook 'irony-mode-hook 'irony-eldoc))
 
 ; neotree ---------------------------------- {{{2
 (use-package neotree
