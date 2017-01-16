@@ -435,6 +435,11 @@
 (use-package which-key
   :config  (which-key-mode))
 
+; winum ------------------------------------ {{{2
+(use-package winum
+  :config  (setq winum-auto-setup-mode-line nil)
+           (winum-mode))
+
 ; yasnippet -------------------------------- {{{2
 (use-package yasnippet
   :config  (yas-reload-all)
