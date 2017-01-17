@@ -334,7 +334,13 @@
 
 ; eyebrowse -------------------------------- {{{2
 (use-package eyebrowse
-  :config  (eyebrowse-mode t))
+  :config  (define-key evil-motion-state-map (kbd "gt") 'eyebrowse-next-window-config)
+           (define-key evil-motion-state-map (kbd "gT") 'eyebrowse-prev-window-config)
+           (evil-leader/set-key "wt" 'eyebrowse-create-window-config)
+           (evil-leader/set-key "ct" 'eyebrowse-close-window-config)
+           (setq eyebrowse-new-workspace t)
+           (eyebrowse-mode t)
+  )
 
 ; fill-column-indicator -------------------- {{{2
 (use-package fill-column-indicator
