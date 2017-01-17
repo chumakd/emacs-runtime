@@ -386,6 +386,7 @@
   :config  (global-set-key [f8] 'neotree-toggle)
            (evil-define-key 'normal neotree-mode-map (kbd "q")   'neotree-hide)
            (evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
+           (evil-define-key 'normal neotree-mode-map (kbd "o")   'neotree-enter)
   )
 
 ; origami ---------------------------------- {{{2
