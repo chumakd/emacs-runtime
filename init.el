@@ -365,6 +365,11 @@
 (use-package flycheck-irony
   :config  (add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
 
+; fzf -------------------------------------- {{{2
+(use-package fzf
+  :config  (evil-leader/set-key "ff" 'fzf))
+
+
 ; highlight-indentation -------------------- {{{2
 (use-package highlight-indentation
   :config  (evil-leader/set-key "ti" 'highlight-indentation-mode))
