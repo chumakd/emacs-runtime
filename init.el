@@ -180,6 +180,7 @@
                         "te" 'view-mode
                         "ts" 'ispell
                         "tg" 'toggle-color-theme
+                        "tq" 'helm-resume
 
                         ;; edit config file
                         "ve" '(lambda () (interactive) (find-file "~/.emacs.d/init.el"))
@@ -380,6 +381,76 @@
 (use-package fzf
   :config  (evil-leader/set-key "ff" 'fzf))
 
+; helm ------------------------------------- {{{2
+(use-package helm
+  :init    (require 'helm-config)
+  :config  (setq helm-case-fold-search                  'smart
+                 ;helm-split-window-default-side         'same
+                 helm-mode-fuzzy-match                  t
+                 helm-completion-in-region-fuzzy-match  t)
+
+           ;; prevent helm from overriding existing ^h mappings
+           ;; (e.g. if it's set to backspace)
+           (define-key helm-map (kbd "C-h") nil)
+           (bind-key "\\be" 'helm-mini  evil-normal-state-map)
+           (bind-key "\\ul" 'helm-occur evil-normal-state-map)
+           (bind-key "\\uf" 'helm-projectile-find-file evil-normal-state-map)
+
+           (require 'helm-adaptive)
+           (helm-adaptive-mode 1)
+
+           (require 'helm-ring)
+           (helm-push-mark-mode 1)
+
+           ;; popup buffer-name or filename in grep/moccur/imenu-all etc...
+           (require 'helm-utils)
+           (helm-popup-tip-mode 1)
+
+           ;(helm-mode 1)
+  )
+
+(use-package helm-flx
+  :config  (helm-flx-mode +1))
+
+(use-package helm-fuzzier
+  :config  (helm-fuzzier-mode 1))
+
+(use-package helm-ag
+  :config  (setq helm-ag-insert-at-point 'word)
+           (defalias 'Ag  'helm-ag)
+           (defalias 'Ack 'Ag)
+           (defalias 'Gg  'helm-grep-do-git-grep)
+           (evil-leader/set-key "gg" 'Gg))
+
+(use-package helm-cscope
+  :diminish "h-cs"
+  :config  (add-hook 'c-mode-common-hook 'helm-cscope-mode)
+           (evil-define-key 'normal helm-cscope-mode-map
+              (kbd "C-q s") 'helm-cscope-find-this-symbol
+              (kbd "C-q g") 'helm-cscope-find-global-definition
+              (kbd "C-q d") 'helm-cscope-find-called-function
+              (kbd "C-q c") 'helm-cscope-find-calling-this-funtcion
+              (kbd "C-q a") 'helm-cscope-find-assignments-to-this-symbol)
+  )
+
+(use-package helm-css-scss
+  :config  (setq helm-css-scss-split-direction  'split-window-vertically)
+           (setq helm-css-scss-split-with-multiple-windows  nil))
+
+(use-package helm-describe-modes)
+(use-package helm-flycheck)
+(use-package helm-ls-git)
+(use-package helm-make)
+(use-package helm-mode-manager)
+
+(use-package helm-projectile
+  :config  (helm-projectile-on))
+
+(use-package helm-swoop
+  :config  (setq helm-swoop-split-direction 'split-window-vertically)
+           (setq helm-swoop-use-line-number-face t))
+
+(use-package helm-themes)
 
 ; highlight-indentation -------------------- {{{2
 (use-package highlight-indentation
@@ -425,7 +496,9 @@
 
 ; projectile ------------------------------- {{{2
 (use-package projectile
-  :config  (setq projectile-switch-project-action 'neotree-projectile-action))
+  :config  (setq projectile-switch-project-action 'helm-projectile)
+           (setq projectile-completion-system     'helm)
+           (projectile-global-mode))
 
 ; rainbow-delimiters ----------------------- {{{2
 (use-package rainbow-delimiters

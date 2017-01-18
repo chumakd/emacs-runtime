@@ -4,6 +4,9 @@
 
 /ac-comphist.dat
 /ido.last
+/recentf
+/helm-adaptive-history
+/projectile-bookmarks.eld
 
 *~
 \#*\#
