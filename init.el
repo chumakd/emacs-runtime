@@ -159,6 +159,7 @@
 
 ; editorconfig ----------------------------- {{{2
 (use-package editorconfig
+  :diminish ""
   :config (editorconfig-mode 1))
 
 ; evil mode -------------------------------- {{{2
@@ -445,7 +446,8 @@
            (spaceline-info-mode))
 
 ; undo-tree -------------------------------- {{{2
-(use-package undo-tree)
+(use-package undo-tree
+  :diminish "U3")
 
 ; web-mode --------------------------------- {{{2
 (use-package web-mode)
@@ -468,10 +470,8 @@
 ;; should be near the end so that any minor modes will already have been
 ;; loaded by the time they're to be converted to diminished modes.
 (use-package diminish
-  :config (diminish 'abbrev-mode "Abv")
-          (diminish 'editorconfig-mode)
-          (diminish 'jiggle-mode)
-          (diminish 'undo-tree-mode "U3"))
+  :config (diminish 'abbrev-mode)
+          (diminish 'jiggle-mode))
 
 ; emacs auto-config ----------------------------------------------------- {{{1
 
