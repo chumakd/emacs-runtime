@@ -155,6 +155,7 @@
 
 ; company ---------------------------------- {{{2
 (use-package company
+  :diminish ""
   :config (global-company-mode))
 
 (use-package company-quickhelp
@@ -291,6 +292,7 @@
 
 ; evil-mc {{{3
 (use-package evil-mc
+  :diminish ""
   :config  (global-evil-mc-mode 1))
 
 ; evil-nerd-commenter {{{3
@@ -540,6 +542,7 @@
   :config  (global-relative-line-numbers-mode))
 
 (use-package linum-relative
+  :diminish ""
   :config  (setq linum-relative-format "%3s ")
            (setq linum-relative-current-symbol "->")
            ;; prevent from showing up in minibuffer
@@ -564,7 +567,7 @@
 
 ; undo-tree -------------------------------- {{{2
 (use-package undo-tree
-  :diminish "U3")
+  :diminish "")
 
 ; vi-tilde-fringe -------------------------- {{{2
 ;; FIXME: investigate runtime error:
@@ -574,6 +577,7 @@
 
 ; volatile-highlights ---------------------- {{{2
 (use-package volatile-highlights
+  :diminish ""
   :config  (vhl/define-extension  'evil 'evil-paste-after 'evil-paste-before
                                   'evil-paste-pop 'evil-move)
            (vhl/install-extension 'evil)
@@ -586,6 +590,7 @@
 
 ; which-key -------------------------------- {{{2
 (use-package which-key
+  :diminish ""
   :config  (which-key-mode))
 
 ; winum ------------------------------------ {{{2
@@ -595,12 +600,14 @@
 
 ; ws-butler -------------------------------- {{{2
 (use-package ws-butler
+  :diminish ""
   :config  (setq require-final-newline 1)
            ;(add-hook 'prog-mode-hook #'ws-butler-mode)
            (ws-butler-global-mode))
 
 ; yasnippet -------------------------------- {{{2
 (use-package yasnippet
+  :diminish yas-minor-mode ""
   :config  (yas-reload-all)
            (add-hook 'prog-mode-hook #'yas-minor-mode))
 
