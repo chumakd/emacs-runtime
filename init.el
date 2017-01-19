@@ -79,10 +79,10 @@
 (setq-default major-mode 'text-mode)
 
 ;; disable line wrapping
-(set-default 'truncate-lines t)
+(setq-default truncate-lines t)
 
 ;; enable line numbers
-(set-default 'column-number-mode t)
+(setq-default column-number-mode t)
 
 ;; TAB indentation
 (global-set-key (kbd "TAB") 'tab-to-tab-stop)
