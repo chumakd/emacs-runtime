@@ -452,9 +452,18 @@
 
 (use-package helm-themes)
 
-; highlight-indentation -------------------- {{{2
+; highlight -------------------------------- {{{2
+(use-package highlight)
+
 (use-package highlight-indentation
   :config  (evil-leader/set-key "ti" 'highlight-indentation-mode))
+
+; hl --------------------------------------- {{{2
+(use-package hl-anything)
+(use-package hl-todo)
+
+; indent-guide ----------------------------- {{{2
+(use-package indent-guide)
 
 ; info+ ------------------------------------ {{{2
 (use-package info+)
