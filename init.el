@@ -563,6 +563,12 @@
 (use-package undo-tree
   :diminish "U3")
 
+; vi-tilde-fringe -------------------------- {{{2
+;; FIXME: investigate runtime error:
+;;        "Symbol’s function definition is void: define-fringe-bitmap"
+;(use-package vi-tilde-fringe
+;  :config  (global-vi-tilde-fringe-mode))
+
 ; web-mode --------------------------------- {{{2
 (use-package web-mode)
 
