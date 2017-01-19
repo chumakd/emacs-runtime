@@ -516,7 +516,22 @@
 
 ; relative-line-numbers -------------------- {{{2
 (use-package relative-line-numbers
+  :disabled t
   :config  (global-relative-line-numbers-mode))
+
+(use-package linum-relative
+  :config  (setq linum-relative-format "%3s ")
+           (setq linum-relative-current-symbol "->")
+           ;; prevent from showing up in minibuffer
+           (add-hook 'minibuffer-setup-hook (lambda () (linum-mode 0)))
+           (linum-relative-global-mode))
+
+(use-package nlinum-relative
+  :disabled t
+  :config  (setq nlinum-relative-redisplay-delay 0)
+           (setq nlinum-relative-current-symbol  "->")
+           (nlinum-relative-setup-evil)
+           (global-nlinum-relative-mode))
 
 ; spaceline -------------------------------- {{{2
 (use-package spaceline
