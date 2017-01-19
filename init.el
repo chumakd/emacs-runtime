@@ -154,6 +154,9 @@
 (use-package company
   :config (global-company-mode))
 
+(use-package company-quickhelp
+  :config (company-quickhelp-mode 1))
+
 (use-package company-irony
   :config (add-to-list 'company-backends 'company-irony))
 
