@@ -312,6 +312,10 @@
   :config  (evil-leader/set-key "tn" 'evil-search-highlight-persist-remove-all)
            (global-evil-search-highlight-persist t))
 
+; evil-smartparens {{{3
+(use-package evil-smartparens
+  :config  (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode))
+
 ; evil-surround {{{3
 (use-package evil-surround
   :config  (global-evil-surround-mode 1))
