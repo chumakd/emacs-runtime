@@ -319,7 +319,11 @@
 
 ; evil-smartparens {{{3
 (use-package evil-smartparens
+  :disabled t
   :config  (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode))
+
+(use-package evil-cleverparens
+  :config (add-hook 'emacs-lisp-mode-hook #'evil-cleverparens-mode))
 
 ; evil-surround {{{3
 (use-package evil-surround
