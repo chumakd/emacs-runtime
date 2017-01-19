@@ -488,6 +488,9 @@
            (evil-define-key 'normal neotree-mode-map (kbd "o")   'neotree-enter)
   )
 
+; open-junk-file --------------------------- {{{2
+(use-package open-junk-file)
+
 ; origami ---------------------------------- {{{2
 (use-package origami
   :config (bind-key "zo" 'origami-open-node               evil-normal-state-map)
