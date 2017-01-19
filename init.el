@@ -75,6 +75,9 @@
 ;; disable welcome screen
 (setq inhibit-splash-screen t)
 
+;; default type for new buffers
+(setq-default major-mode 'text-mode)
+
 ;; disable line wrapping
 (set-default 'truncate-lines t)
 
