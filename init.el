@@ -590,6 +590,12 @@
   :config  (setq winum-auto-setup-mode-line nil)
            (winum-mode))
 
+; ws-butler -------------------------------- {{{2
+(use-package ws-butler
+  :config  (setq require-final-newline 1)
+           ;(add-hook 'prog-mode-hook #'ws-butler-mode)
+           (ws-butler-global-mode))
+
 ; yasnippet -------------------------------- {{{2
 (use-package yasnippet
   :config  (yas-reload-all)
