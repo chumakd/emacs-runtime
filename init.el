@@ -477,6 +477,9 @@
 (use-package irony-eldoc
   :config  (add-hook 'irony-mode-hook 'irony-eldoc))
 
+; move-text -------------------------------- {{{2
+(use-package move-text)
+
 ; neotree ---------------------------------- {{{2
 (use-package neotree
   :config  (global-set-key [f8] 'neotree-toggle)
