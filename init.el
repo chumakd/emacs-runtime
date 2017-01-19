@@ -569,12 +569,6 @@
 (use-package undo-tree
   :diminish "")
 
-; vi-tilde-fringe -------------------------- {{{2
-;; FIXME: investigate runtime error:
-;;        "Symbol’s function definition is void: define-fringe-bitmap"
-;(use-package vi-tilde-fringe
-;  :config  (global-vi-tilde-fringe-mode))
-
 ; volatile-highlights ---------------------- {{{2
 (use-package volatile-highlights
   :diminish ""
