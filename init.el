@@ -480,6 +480,10 @@
 (use-package irony-eldoc
   :config  (add-hook 'irony-mode-hook 'irony-eldoc))
 
+; magit ------------------------------------ {{{2
+(use-package magit
+  :config (evil-leader/set-key "gs" 'magit-status))
+
 ; move-text -------------------------------- {{{2
 (use-package move-text)
 
