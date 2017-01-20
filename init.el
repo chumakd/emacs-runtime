@@ -221,7 +221,20 @@
          (global-evil-jumper-mode 1)
          ;(setq evil-intercept-esc 'always)
 
-         ;; key bindings {{{3
+         ;; use Emacs state in these additional modes
+         ;(dolist (mode '(ag-mode
+         ;                dired-mode
+         ;                eshell-mode
+         ;                flycheck-error-list-mode
+         ;                git-rebase-mode
+         ;                term-mode))
+         ;  (add-to-list 'evil-emacs-state-modes mode))
+
+         ;; use insert state in these additional modes.
+         ;(dolist (mode '(magit-log-edit-mode))
+         ;  (add-to-list 'evil-insert-state-modes mode))
+
+         ;; key bindings ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ {{{3
          (use-package bind-map)
 
          ;; alternative help-command mapping
@@ -238,6 +251,17 @@
          (defadvice evil-search-word-backward
              (after advice-for-evil-search-word-backward activate)
              (evil-search-previous))
+
+         ;; enable hjkl keys along with other bindings in occur-mode
+         ;(add-hook 'occur-mode-hook
+         ; (lambda ()
+         ;   (evil-add-hjkl-bindings occur-mode-map 'emacs
+         ;     (kbd "/")       'evil-search-forward
+         ;     (kbd "n")       'evil-search-next
+         ;     (kbd "N")       'evil-search-previous
+         ;     (kbd "C-d")     'evil-scroll-down
+         ;     (kbd "C-u")     'evil-scroll-up
+         ;     (kbd "C-w C-w") 'other-window)))
 
         (use-package evil-anzu) ; {{{3
 
