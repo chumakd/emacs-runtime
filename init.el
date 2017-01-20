@@ -270,8 +270,11 @@
 
         ; evil-god-state {{{3
         (use-package evil-god-state
-          :config  ;(bind-key "SPC" 'god-local-mode            global-map)
-                   (bind-key "SPC" 'evil-execute-in-god-state evil-normal-state-map))
+          :bind  (:map evil-normal-state-map ("SPC" . evil-execute-in-god-state)
+                  :map evil-motion-state-map ("SPC" . evil-execute-in-god-state)
+                  :map evil-visual-state-map ("SPC" . evil-execute-in-god-state)
+                  :map evil-emacs-state-map  ("SPC" . evil-execute-in-god-state))
+          )
 
         ; evil-indent-plus {{{3
         (use-package evil-indent-plus
