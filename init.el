@@ -172,12 +172,10 @@
 ; evil mode -------------------------------- {{{2
 
 (use-package evil
-  :init
-         ;; key bindings using evil leader
-         ;;   it should be initialized before evil mode
+  :config
          (use-package evil-leader
-           :init    (global-evil-leader-mode)
-           :config  (evil-leader/set-leader ",")
+           :config  (global-evil-leader-mode)
+                    (evil-leader/set-leader ",")
                     (evil-leader/set-key
                         ;; togglers
                         "tt" 'toggle-tabs
@@ -217,10 +215,14 @@
                         "cl" '(lambda () (interactive)
                                   (evil-window-right 1) (evil-window-delete))
                     )
-           )
-  :config
+           ) ;; evil-leader
+
          (evil-mode 1)
+         (global-evil-jumper-mode 1)
          ;(setq evil-intercept-esc 'always)
+
+         ;; key bindings {{{3
+         (use-package bind-map)
 
          ;; alternative help-command mapping
          (bind-key "\\h"  'help-command                   evil-normal-state-map)
@@ -270,8 +272,6 @@
 
         (use-package evil-indent-plus ; {{{3
           :config  (evil-indent-plus-default-bindings))
-
-        (use-package evil-jumper) ; {{{3
 
         (use-package evil-magit ; {{{3
           :config  (evil-define-key evil-magit-state magit-mode-map "?" 'evil-search-backward))
