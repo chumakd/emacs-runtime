@@ -237,119 +237,95 @@
              (after advice-for-evil-search-word-backward activate)
              (evil-search-previous))
 
-        ; evil-anzu {{{3
-        (use-package evil-anzu)
+        (use-package evil-anzu) ; {{{3
 
-        ; evil-args {{{3
-        (use-package evil-args
+        (use-package evil-args ; {{{3
           :config  (bind-key "a" 'evil-inner-arg evil-inner-text-objects-map)
                    (bind-key "a" 'evil-outer-arg evil-outer-text-objects-map))
 
-        ; evil-commentary {{{3
-        (use-package evil-commentary
+        (use-package evil-commentary ; {{{3
           :config  (evil-commentary-mode))
 
-        ; evil-easymotion {{{3
-        (use-package evil-easymotion
+        (use-package evil-easymotion ; {{{3
           :config  (setq evilem-style 'at)
                    (evilem-default-keybindings "C-\\"))
 
-        ; evil-ediff {{{3
-        (use-package evil-ediff)
+        (use-package evil-ediff) ; {{{3
 
-        ; evil-escape {{{3
-        (use-package evil-escape
+        (use-package evil-escape ; {{{3
           :config  (global-set-key (kbd "<escape>") 'evil-escape)
                    (evil-escape-mode))
 
-        ; evil-exchange {{{3
-        (use-package evil-exchange
+        (use-package evil-exchange ; {{{3
           :config  ;(evil-exchange-install)
                    ; experimental, if doesn't work use default init command above
                    (evil-exchange-cx-install))
 
-        ; evil-god-state {{{3
-        (use-package evil-god-state
+        (use-package evil-god-state ; {{{3
           :bind  (:map evil-normal-state-map ("SPC" . evil-execute-in-god-state)
                   :map evil-motion-state-map ("SPC" . evil-execute-in-god-state)
                   :map evil-visual-state-map ("SPC" . evil-execute-in-god-state)
                   :map evil-emacs-state-map  ("SPC" . evil-execute-in-god-state))
           )
 
-        ; evil-indent-plus {{{3
-        (use-package evil-indent-plus
+        (use-package evil-indent-plus ; {{{3
           :config  (evil-indent-plus-default-bindings))
 
-        ; evil-jumper {{{3
-        (use-package evil-jumper)
+        (use-package evil-jumper) ; {{{3
 
-        ; evil-magit {{{3
-        (use-package evil-magit
+        (use-package evil-magit ; {{{3
           :config  (evil-define-key evil-magit-state magit-mode-map "?" 'evil-search-backward))
 
-        ; evil-matchit {{{3
-        (use-package evil-matchit
+        (use-package evil-matchit ; {{{3
           :config  (global-evil-matchit-mode 1))
 
-        ; evil-mc {{{3
-        (use-package evil-mc
+        (use-package evil-mc ; {{{3
           :diminish ""
           :config  (global-evil-mc-mode 1))
 
-        ; evil-nerd-commenter {{{3
-        (use-package evil-nerd-commenter
+        (use-package evil-nerd-commenter ; {{{3
           :config  (bind-key "\\cc" 'evilnc-comment-or-uncomment-lines evil-normal-state-map)
                    (bind-key "\\cy" 'evilnc-copy-and-comment-lines     evil-normal-state-map)
           )
 
-        ; evil-numbers {{{3
-        (use-package evil-numbers)
+        (use-package evil-numbers) ; {{{3
 
-        ; evil-org {{{3
-        (use-package evil-org)
+        (use-package evil-org) ; {{{3
 
-        ; evil-rsi {{{3
-        (use-package evil-rsi)
-          ; disabled by default, cause it messes up with C-e in normal mode
-          ;:config  (evil-rsi-mode))
+        (use-package evil-rsi ; {{{3
+          ;; disabled because it messes up C-e in normal mode
+          :disabled t
+          :config  (evil-rsi-mode))
 
-        ; evil-search-highlight-persist {{{3
-        (use-package evil-search-highlight-persist
+        (use-package evil-search-highlight-persist ; {{{3
           :config  (evil-leader/set-key "tn" 'evil-search-highlight-persist-remove-all)
                    (global-evil-search-highlight-persist t))
 
-        ; evil-smartparens {{{3
-        (use-package evil-smartparens
+        (use-package evil-smartparens ; {{{3
           :disabled t
           :config  (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode))
 
-        (use-package evil-cleverparens
+        (use-package evil-cleverparens ; {{{3
           :config (add-hook 'emacs-lisp-mode-hook #'evil-cleverparens-mode))
 
-        ; evil-surround {{{3
-        (use-package evil-surround
+        (use-package evil-surround ; {{{3
           :config  (global-evil-surround-mode 1))
 
-        ; evil-tabs {{{3
-        (use-package evil-tabs
+        (use-package evil-tabs ; {{{3
           ;; disabled, because it's still very raw
           :disabled t
           :config  (global-evil-tabs-mode t))
 
-        ; evil-textobj-column {{{3
-        (use-package evil-textobj-column
+        (use-package evil-textobj-column ; {{{3
           :config  (bind-key "c" 'evil-textobj-column-word evil-inner-text-objects-map)
                    (bind-key "C" 'evil-textobj-column-WORD evil-inner-text-objects-map)
           )
 
-        ; evil-visual-mark-mode {{{3
-        (use-package evil-visual-mark-mode)
+        (use-package evil-visual-mark-mode) ; {{{3
 
-        ; evil-visual-replace {{{3
-        (use-package evil-visual-replace)
+        (use-package evil-visual-replace) ; {{{3
 
-        ; evil-visualstar {{{3
-        (use-package evil-visualstar
+        (use-package evil-visualstar ; {{{3
           :config  (global-evil-visualstar-mode))
 
   ) ;; evil
