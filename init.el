@@ -4,12 +4,15 @@
 
 ; Packages -------------------------------------------------------------- {{{1
 
+;; TODO: remove when emacs 27 is released
+;;       disable GnuTLS1.3, this fixes 'page not found' issue when talking to
+;;       repos over https
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
+
 ;; repositories
 (setq         package-archives  '(("gnu"   . "https://elpa.gnu.org/packages/")))
 (add-to-list 'package-archives  '( "melpa" . "https://melpa.org/packages/"))
 ;(add-to-list 'package-archives  '( "marmalade" . "https://marmalade-repo.org/packages/"))
-;; or use mepla stable versions
-;(add-to-list 'package-archives  '( "melpa-stable" . "https://melpa.org/packages/"))
 
 ;; activate all the packages
 (package-initialize)
@@ -218,7 +221,7 @@
            ) ;; evil-leader
 
          (evil-mode 1)
-         (global-evil-jumper-mode 1)
+         ;(global-evil-jumper-mode 1)
          ;(setq evil-intercept-esc 'always)
 
          ;; use Emacs state in these additional modes
@@ -420,7 +423,7 @@
            (helm-adaptive-mode 1)
 
            (require 'helm-ring)
-           (helm-push-mark-mode 1)
+           ;(helm-push-mark-mode 1)
 
            ;; popup buffer-name or filename in grep/moccur/imenu-all etc...
            (require 'helm-utils)
@@ -486,7 +489,7 @@
 (use-package indent-guide)
 
 ; info+ ------------------------------------ {{{2
-(use-package info+)
+;(use-package info+)
 
 ; irony ------------------------------------ {{{2
 (use-package irony
