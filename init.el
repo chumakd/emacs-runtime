@@ -51,7 +51,9 @@
 
 (if (display-graphic-p)
     (load-theme current-color-theme t)
-    (if (string-match "^Solarized" (getenv "ITERM_PROFILE"))
+    ;(if (or (eq system-type 'gnu/linux)
+    (if (and (getenv "ITERM_PROFILE")
+             (string-match "^Solarized" (getenv "ITERM_PROFILE")))
         (load-theme current-color-theme t)
         (load-theme 'wombat t)))
 
