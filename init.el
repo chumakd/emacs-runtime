@@ -7,7 +7,8 @@
 ;; TODO: remove when emacs 27 is released
 ;;       disable GnuTLS1.3, this fixes 'page not found' issue when talking to
 ;;       repos over https
-(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
+;; NOTE: it seems to be fixed in 26.3
+;(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 
 ;; repositories
 (setq         package-archives  '(("gnu"   . "https://elpa.gnu.org/packages/")))
