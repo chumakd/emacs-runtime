@@ -328,7 +328,7 @@
           :config  (evil-rsi-mode))
 
         (use-package evil-search-highlight-persist ; {{{3
-          :config  (evil-leader/set-key "tn" 'evil-search-highlight-persist-remove-all)
+          :config  (evil-leader/set-key "th" 'evil-search-highlight-persist-remove-all)
                    (global-evil-search-highlight-persist t))
 
         (use-package evil-smartparens ; {{{3
