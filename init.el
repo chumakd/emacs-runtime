@@ -61,7 +61,8 @@
 ;; font ------------------------------------ {{{2
 (if (display-graphic-p)
     (when (eq system-type 'darwin)
-          (set-face-attribute 'default nil :family "Input")
+          ;(set-face-attribute 'default nil :family "Input")
+          (set-face-attribute 'default nil :family "JetBrains Mono")
           (set-face-attribute 'default nil :height 170)))
 
 ;; interface ------------------------------- {{{2
