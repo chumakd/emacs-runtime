@@ -129,8 +129,8 @@
 (setq use-dialog-box nil)
 
 ;; backups location
-(setq backup-directory-alist '(("." . "~/.emacs.d/backup")))
-(setq auto-save-file-name-transforms  '(("." "~/.emacs.d/backup" t)))
+(setq backup-directory-alist '((".*" . "~/.emacs.d/backup/")))
+(setq auto-save-file-name-transforms  '((".*" "~/.emacs.d/backup/\\2" t)))
 
 ;; weeks should begin on Monday
 (setq calendar-week-start-day 1)
