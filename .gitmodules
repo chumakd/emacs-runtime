@@ -1,4 +1,8 @@
 [submodule "p/spacemacs"]
 	path = p/spacemacs
 	url = https://github.com/syl20bnr/spacemacs.git
-    ignore = untracked
+	ignore = untracked
+[submodule "p/doom-emacs"]
+	path = p/doom-emacs
+	url = https://github.com/hlissner/doom-emacs.git
+	ignore = untracked
