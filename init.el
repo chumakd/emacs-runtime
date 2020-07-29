@@ -556,12 +556,18 @@
   :disabled t
   :config  (global-relative-line-numbers-mode))
 
+(defun inhibit-global-linum-mode ()
+    (add-hook 'after-change-major-mode-hook
+              (lambda () (linum-mode 0))
+              :append :local))
+
 (use-package linum-relative
   :diminish ""
   :config  (setq linum-relative-format "%3s ")
            (setq linum-relative-current-symbol "->")
-           ;; prevent from showing up in minibuffer
+           ;; prevent from showing up in minibuffer and terminal
            (add-hook 'minibuffer-setup-hook (lambda () (linum-mode 0)))
+           (add-hook 'term-mode-hook 'inhibit-global-linum-mode)
            (linum-relative-global-mode))
 
 (use-package nlinum-relative
