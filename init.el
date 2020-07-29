@@ -41,7 +41,7 @@
 (defvar alternate-color-theme 'solarized-light)
 (defvar current-color-theme    default-color-theme)
 
-(defun  toggle-color-theme ()
+(defun toggle-color-theme ()
     (interactive)
     (disable-theme current-color-theme)
     (load-theme    alternate-color-theme t)
