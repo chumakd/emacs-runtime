@@ -34,26 +34,74 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     javascript
-     yaml
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
+
+     auto-completion
+     cmake
+     copy-as-format
+     cscope
+     debug
+     docker
+     emoji
+     git
+     github
+     gtags
      helm
-     ;; auto-completion
-     ;; better-defaults
+     helpful
+     lsp
+     multiple-cursors
+     org
+     (shell :variables
+            shell-default-height 30
+            shell-default-position 'bottom)
+     spell-checking
+     syntax-checking
+     templates
+     tmux
+     treemacs
+     unicode-fonts
+
+     ;; programming languages
+     ansible
+     asciidoc
+     asm
+     c-c++
+     clojure
+     csv
+     dhall
+     elixir
+     elm
      emacs-lisp
-     ;; git
-     ;; markdown
-     ;; org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
-     ;; spell-checking
-     ;; syntax-checking
-     ;; version-control
+     erlang
+     go
+     graphviz
+     html
+     javascript
+     javascript
+     json
+     jsonnet
+     latex
+     markdown
+     perl5
+     plantuml
+     python
+     restructuredtext
+     ruby
+     rust
+     salt
+     shell-scripts
+     sphinx
+     sql
+     typescript
+     vimscript
+     yaml
+
+     ;; frameworks
+     phoenix
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
