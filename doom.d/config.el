@@ -22,7 +22,7 @@
 ;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 ;(setq doom-font "JetBrains Mono"
-(setq doom-font "Input Mono-14"
+(setq doom-font "Input Mono-13"
       doom-variable-pitch-font "SF Pro Text")
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
@@ -38,6 +38,9 @@
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type 'relative)
 
+;; Frame size
+(add-to-list 'default-frame-alist '(width  . 140))
+(add-to-list 'default-frame-alist '(height . 50))
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
