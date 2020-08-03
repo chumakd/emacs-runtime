@@ -57,6 +57,7 @@ values."
      helpful
      lsp
      multiple-cursors
+     neotree
      org
      (shell :variables
             shell-default-height 30
@@ -64,6 +65,7 @@ values."
      spell-checking
      syntax-checking
      templates
+     themes-megapack
      tmux
      treemacs
      unicode-fonts
@@ -268,7 +270,7 @@ It should only modify the values of Spacemacs settings."
    ;; Default font or prioritized list of fonts.
    dotspacemacs-default-font '("JetBrains Mono"
                                ;;"Source Code Pro"
-                               ;:size 13
+                               :size 26
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -585,6 +587,25 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (setq powerline-default-separator nil)
+  ;; theme
+  (use-package doom-themes
+    :config
+    ;; Global settings (defaults)
+    (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+          doom-themes-enable-italic t) ; if nil, italics is universally disabled
+    (load-theme 'doom-one t)
+
+    ;; Enable flashing mode-line on errors
+    (doom-themes-visual-bell-config)
+
+    ;; Enable custom neotree theme (all-the-icons must be installed!)
+    (doom-themes-neotree-config)
+    ;; or for treemacs users
+    (setq doom-themes-treemacs-theme "doom-colors") ; use the colorful treemacs theme
+    (doom-themes-treemacs-config)
+
+    ;; Corrects (and improves) org-mode's native fontification.
+    (doom-themes-org-config))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
