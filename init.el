@@ -276,6 +276,8 @@
           :config  (bind-key "a" 'evil-inner-arg evil-inner-text-objects-map)
                    (bind-key "a" 'evil-outer-arg evil-outer-text-objects-map))
 
+        ;(use-package evil-collection) ; {{{3
+
         (use-package evil-commentary ; {{{3
           :config  (evil-commentary-mode))
 
@@ -304,8 +306,8 @@
         (use-package evil-indent-plus ; {{{3
           :config  (evil-indent-plus-default-bindings))
 
-        (use-package evil-magit ; {{{3
-          :config  (evil-define-key evil-magit-state magit-mode-map "?" 'evil-search-backward))
+        ;(use-package evil-magit ; {{{3
+        ;  :config  (evil-define-key evil-magit-state magit-mode-map "?" 'evil-search-backward))
 
         (use-package evil-matchit ; {{{3
           :config  (global-evil-matchit-mode 1))
@@ -635,3 +637,16 @@
 
 ; emacs auto-config ----------------------------------------------------- {{{1
 
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(yasnippet ws-butler winum which-key web-mode volatile-highlights undo-tree spaceline linum-relative rainbow-delimiters origami open-junk-file neotree move-text magit irony-eldoc indent-guide hl-todo hl-anything highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-ls-git helm-flycheck helm-describe-modes helm-css-scss helm-cscope helm-ag helm-fuzzier helm-flx helm fzf flycheck-irony flycheck-color-mode-line flycheck-checkbashisms flycheck-bashate flycheck flx-ido fill-column-indicator eyebrowse expand-region evil-visualstar evil-visual-replace evil-visual-mark-mode evil-textobj-column evil-surround evil-cleverparens evil-search-highlight-persist evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-indent-plus evil-god-state evil-exchange evil-escape evil-ediff evil-easymotion evil-commentary evil-args evil-anzu bind-map evil-leader evil editorconfig company-irony company-quickhelp company solarized-theme use-package diminish)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
