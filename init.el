@@ -42,6 +42,16 @@
 (defvar alternate-color-theme 'solarized-light)
 (defvar current-color-theme    default-color-theme)
 
+(use-package doom-themes
+  :ensure t
+  :config
+  (setq doom-themes-enable-bold t
+        doom-themes-enable-italic t)
+  (load-theme 'doom-one t)
+  (doom-themes-visual-bell-config)
+  ;(doom-themes-neotree-config)
+  (doom-themes-org-config))
+
 (defun toggle-color-theme ()
     (interactive)
     (disable-theme current-color-theme)
@@ -57,7 +67,7 @@
     (if (and (getenv "ITERM_PROFILE")
              (string-match "^Solarized" (getenv "ITERM_PROFILE")))
         (load-theme current-color-theme t)
-        (load-theme 'wombat t)))
+        (load-theme 'doom-one t)))
 
 ;; font ------------------------------------ {{{2
 (if (display-graphic-p)
